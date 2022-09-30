@@ -1,3 +1,4 @@
+import { UsuariosService } from './../../services/usuarios.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosComponent implements OnInit {
 
-  constructor() { }
+  constructor( private usuariosService: UsuariosService) { }
 
   ngOnInit(): void {
   }
