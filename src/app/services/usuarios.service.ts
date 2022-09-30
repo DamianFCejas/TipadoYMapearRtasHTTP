@@ -1,6 +1,7 @@
-import { ReqResResponse } from 'src/app/models/reqres-response';
+import { ReqResResponse } from 'src/app/models';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,12 @@ export class UsuariosService {
   cargarUsuarios(){
     const url = 'https://reqres.in/api/users';
 
-    return this.http.get<ReqResResponse>( url );
+    return this.http.get<ReqResResponse>( url )
+                .pipe(
+                  map (resp => {
+                    return resp.data
+                  })
+                )
 
   }
 }

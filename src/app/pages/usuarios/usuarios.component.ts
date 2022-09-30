@@ -15,10 +15,10 @@ export class UsuariosComponent implements OnInit {
   ngOnInit(): void {
 
     this.usuariosService.cargarUsuarios()
-        .subscribe( resp => {
+        .subscribe( usuarios => {
 
-          console.log(resp);
-          this.usuarios = resp.data;
+          console.log(usuarios);
+          this.usuarios = usuarios;
           
         });
 
