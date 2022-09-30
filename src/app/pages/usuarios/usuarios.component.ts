@@ -11,6 +11,14 @@ export class UsuariosComponent implements OnInit {
   constructor( private usuariosService: UsuariosService) { }
 
   ngOnInit(): void {
+
+    this.usuariosService.cargarUsuarios()
+        .subscribe( resp => {
+
+          console.log(resp);
+          
+        })
+
   }
 
 }

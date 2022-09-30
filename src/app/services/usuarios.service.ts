@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,7 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class UsuariosService {
 
-  constructor() {
-    console.log('usuarios service listo')
-   }
+  constructor( private http: HttpClient) { }
+
+  cargarUsuarios(){
+    const url = 'https://reqres.in/api/users';
+
+    return this.http.get(url);
+
+  }
 }
