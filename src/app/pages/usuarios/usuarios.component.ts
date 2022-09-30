@@ -15,9 +15,9 @@ export class UsuariosComponent implements OnInit {
     this.usuariosService.cargarUsuarios()
         .subscribe( resp => {
 
-          console.log(resp);
+          console.log(resp.data[0].first_name);
           
-        })
+        });
 
   }
 

@@ -1,3 +1,4 @@
+import { ReqResResponse } from 'src/app/models/reqres-response';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -11,7 +12,7 @@ export class UsuariosService {
   cargarUsuarios(){
     const url = 'https://reqres.in/api/users';
 
-    return this.http.get(url);
+    return this.http.get<ReqResResponse>( url );
 
   }
 }
