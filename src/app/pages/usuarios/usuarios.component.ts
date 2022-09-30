@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosComponent implements OnInit {
 
+  public usuarios: any = [];
+
   constructor( private usuariosService: UsuariosService) { }
 
   ngOnInit(): void {
@@ -15,7 +17,8 @@ export class UsuariosComponent implements OnInit {
     this.usuariosService.cargarUsuarios()
         .subscribe( resp => {
 
-          console.log(resp.data[0].first_name);
+          console.log(resp);
+          this.usuarios = resp.data;
           
         });
 
