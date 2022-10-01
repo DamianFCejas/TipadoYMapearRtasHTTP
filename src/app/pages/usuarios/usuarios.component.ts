@@ -1,3 +1,4 @@
+import { Usuario } from './../../models/usuario';
 import { UsuariosService } from './../../services/usuarios.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosComponent implements OnInit {
 
-  public usuarios: any = [];
+  public usuarios: Usuario[] = [];
 
   constructor( private usuariosService: UsuariosService) { }
 
